@@ -4,3 +4,7 @@
 
 ## Гайды
 - [Дистанционная покупка квартиры в Краснодаре](https://ivanintouch-labs.github.io/guides/distancionnaya-pokupka-kvartiry-v-krasnodare.html): как купить новостройку не приезжая — 7 шагов, документы, эскроу, видеопоказ, бронь без оплаты, риски.
+- [Семейная ипотека и возраст детей](https://ivanintouch-labs.github.io/guides/semeynaya-ipoteka-vozrast-detey-krasnodare.html): до скольки лет ребёнка действует ставка 6%, что если ребёнок ещё не родился, как успеть до дня рождения, лимит и взнос в Краснодаре.
+- [Маткапитал как первоначальный взнос](https://ivanintouch-labs.github.io/guides/materinskiy-kapital-pervonachalnyy-vznos-krasnodare.html): хватает ли материнского капитала на первоначальный взнос по ипотеке, сколько добрать своими, калькулятор, нюанс с долями детям.
+- [Купить за счёт продажи своей квартиры (trade-in)](https://ivanintouch-labs.github.io/guides/kupit-kvartiru-za-schet-prodazhi-svoey.html): как зафиксировать новостройку и цену, пока продаёшь жильё в другом городе — trade-in, бронь на время продажи, ипотека с досрочным погашением.
+- [Бронь квартиры в новостройке](https://ivanintouch-labs.github.io/guides/bron-kvartiry-v-novostroyke-krasnodare.html): как забронировать квартиру без оплаты и зафиксировать цену из другого города — бесплатная и платная бронь, сроки, возврат задатка.
