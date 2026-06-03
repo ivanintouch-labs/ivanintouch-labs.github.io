@@ -1,0 +1,100 @@
+/* Переезд на Юг — базовый стиль. Mobile-first, чистый, доверительный. */
+:root {
+  --ink: #1a2330;
+  --muted: #5a6776;
+  --line: #e6ebf1;
+  --bg: #ffffff;
+  --soft: #f5f8fb;
+  --accent: #1f7a5a;      /* спокойный южный зелёный */
+  --accent-d: #155f45;
+  --warn-bg: #fff7e6;
+  --radius: 12px;
+  --maxw: 760px;
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+body {
+  margin: 0; color: var(--ink); background: var(--bg);
+  font: 17px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+.wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 20px; }
+
+/* Header */
+header.site { border-bottom: 1px solid var(--line); position: sticky; top: 0; background: rgba(255,255,255,.92); backdrop-filter: blur(6px); z-index: 10; }
+header.site .wrap { display: flex; align-items: center; justify-content: space-between; height: 62px; }
+.brand { font-weight: 700; font-size: 18px; color: var(--ink); text-decoration: none; letter-spacing: -.2px; }
+.brand span { color: var(--accent); }
+nav.top a { color: var(--muted); text-decoration: none; margin-left: 18px; font-size: 15px; }
+nav.top a:hover { color: var(--ink); }
+
+/* Hero */
+.hero { padding: 48px 0 32px; }
+.hero h1 { font-size: 32px; line-height: 1.2; margin: 0 0 14px; letter-spacing: -.5px; }
+.hero p.lead { font-size: 19px; color: var(--muted); margin: 0 0 26px; }
+
+/* Buttons */
+.btn { display: inline-block; background: var(--accent); color: #fff; text-decoration: none;
+  padding: 13px 22px; border-radius: var(--radius); font-weight: 600; font-size: 16px; border: 0; cursor: pointer; }
+.btn:hover { background: var(--accent-d); }
+.btn.ghost { background: var(--soft); color: var(--accent-d); }
+
+/* Content */
+main { padding: 8px 0 56px; }
+article h2 { font-size: 24px; line-height: 1.25; margin: 38px 0 12px; letter-spacing: -.3px; }
+article h3 { font-size: 19px; margin: 26px 0 8px; }
+article p { margin: 0 0 16px; }
+article ul, article ol { margin: 0 0 18px; padding-left: 22px; }
+article li { margin: 0 0 8px; }
+a { color: var(--accent-d); }
+
+.tldr { background: var(--soft); border: 1px solid var(--line); border-radius: var(--radius); padding: 18px 20px; margin: 8px 0 28px; }
+.tldr strong { display: block; margin-bottom: 8px; }
+.tldr ul { margin: 0; }
+
+.callout { background: var(--warn-bg); border: 1px solid #f0dca8; border-radius: var(--radius); padding: 16px 18px; margin: 22px 0; font-size: 16px; }
+
+table { width: 100%; border-collapse: collapse; margin: 18px 0; font-size: 15px; }
+th, td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--line); vertical-align: top; }
+th { background: var(--soft); font-weight: 600; }
+
+.faq dt { font-weight: 600; margin: 18px 0 6px; }
+.faq dd { margin: 0 0 6px; color: var(--ink); }
+
+.quote { border-left: 3px solid var(--accent); padding: 4px 0 4px 16px; color: var(--muted); font-style: italic; margin: 14px 0; }
+
+/* CTA block */
+.cta-block { background: var(--soft); border: 1px solid var(--line); border-radius: var(--radius); padding: 24px; margin: 32px 0; text-align: center; }
+.cta-block h3 { margin: 0 0 8px; font-size: 20px; }
+.cta-block p { color: var(--muted); margin: 0 0 16px; }
+
+/* Marquiz embed placeholder */
+.quiz-embed { min-height: 80px; }
+
+/* Cards (home) */
+.cards { display: grid; gap: 14px; margin: 24px 0; }
+.card { border: 1px solid var(--line); border-radius: var(--radius); padding: 18px 20px; text-decoration: none; color: var(--ink); display: block; }
+.card:hover { border-color: var(--accent); }
+.card .k { font-size: 13px; color: var(--accent-d); text-transform: uppercase; letter-spacing: .4px; }
+.card h3 { margin: 6px 0 4px; font-size: 18px; }
+.card p { margin: 0; color: var(--muted); font-size: 15px; }
+
+/* Trust row */
+.trust { display: grid; grid-template-columns: 1fr; gap: 12px; margin: 26px 0; }
+.trust div { background: var(--soft); border-radius: var(--radius); padding: 16px 18px; }
+.trust b { display: block; font-size: 15px; margin-bottom: 2px; }
+.trust span { color: var(--muted); font-size: 14px; }
+
+/* Breadcrumbs */
+.crumbs { font-size: 14px; color: var(--muted); padding: 16px 0 0; }
+.crumbs a { color: var(--muted); }
+
+/* Footer */
+footer.site { border-top: 1px solid var(--line); color: var(--muted); font-size: 14px; padding: 28px 0 48px; }
+footer.site a { color: var(--muted); }
+footer.site .disc { margin-top: 10px; font-size: 13px; }
+
+@media (min-width: 720px) {
+  .hero h1 { font-size: 40px; }
+  .cards { grid-template-columns: 1fr 1fr; }
+  .trust { grid-template-columns: 1fr 1fr 1fr; }
+}
