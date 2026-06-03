@@ -14,10 +14,10 @@
 <style>
   .calc { background:#fff; border:1px solid var(--line); border-radius:var(--radius); padding:22px; box-shadow:var(--sh); margin:8px 0 26px; }
   .calc label { display:block; font-weight:700; font-size:15px; margin:14px 0 6px; }
-  .calc input, .calc select { width:100%; font:inherit; font-size:16px; padding:12px 14px; border:1px solid var(--line); border-radius:var(--radius-sm); background:var(--sand); color:var(--ink); }
+  .calc input, .calc select { width:100%; font:inherit; font-size:16px; padding:12px 14px; border:1px solid var(--line); border-radius:var(--radius-sm); background:var(--sand); color:var(--ink); font-variant-numeric:tabular-nums; }
   .calc input:focus, .calc select:focus { outline:none; border-color:var(--green); }
   .calc .res { margin-top:18px; padding-top:16px; border-top:1px dashed var(--line); }
-  .calc .row { display:flex; justify-content:space-between; gap:12px; padding:7px 0; font-size:16px; }
+  .calc .row { display:flex; justify-content:space-between; gap:12px; padding:7px 0; font-size:16px; font-variant-numeric:tabular-nums; }
   .calc .row span:last-child { font-weight:700; text-align:right; white-space:nowrap; }
   .calc .verdict { margin-top:12px; padding:14px 16px; border-radius:var(--radius-sm); font-weight:700; }
   .calc .ok { background:var(--green-l); color:var(--green-d); }
@@ -119,7 +119,7 @@
 
   <div class="calc">
     <label for="price">Стоимость квартиры, ₽</label>
-    <input id="price" type="number" inputmode="numeric" value="5000000" min="0" step="100000">
+    <input id="price" type="text" inputmode="numeric" autocomplete="off" value="5 000 000">
 
     <label for="mk">Материнский капитал</label>
     <select id="mk">
@@ -128,7 +128,7 @@
       <option value="220000">Доплата на второго (≈ 220 000 ₽)</option>
       <option value="custom">Свой размер…</option>
     </select>
-    <input id="mkCustom" type="number" inputmode="numeric" value="912000" min="0" step="10000" style="display:none">
+    <input id="mkCustom" type="text" inputmode="numeric" autocomplete="off" value="912 000" style="display:none">
 
     <label for="pv">Первоначальный взнос, %</label>
     <input id="pv" type="number" inputmode="numeric" value="20" min="0" max="90" step="1">
@@ -193,23 +193,31 @@
       pv=document.getElementById('pv'),
       res=document.getElementById('res');
   function fmt(n){ return Math.round(n).toLocaleString('ru-RU')+' ₽'; }
-  function mkValue(){ return mk.value==='custom' ? (parseFloat(mkCustom.value)||0) : parseFloat(mk.value)||0; }
+  function digits(s){ return (s||'').replace(/\D/g,''); }
+  function group(d){ return d.replace(/\B(?=(\d{3})+(?!\d))/g,' '); }
+  function num(el){ return parseFloat(digits(el.value))||0; }
+  function formatField(el){ var d=digits(el.value); el.value = d ? group(d) : ''; }
+  function mkValue(){ return mk.value==='custom' ? num(mkCustom) : parseFloat(mk.value)||0; }
   function pay(loan){ var i=0.06/12, n=360; if(loan<=0) return 0; return loan*i/(1-Math.pow(1+i,-n)); }
   function calc(){
-    var P=parseFloat(price.value)||0,
+    var P=num(price),
         M=mkValue(),
         pct=Math.min(Math.max(parseFloat(pv.value)||0,0),90)/100,
         need=P*pct,
-        loan=P-need,
+        down=Math.min(P, Math.max(need, M)),
+        loan=P-down,
         gap=need-M,
         html='';
-    html+='<div class="row"><span>Нужный первоначальный взнос</span><span>'+fmt(need)+'</span></div>';
+    html+='<div class="row"><span>Нужный взнос (от '+Math.round(pct*100)+'%)</span><span>'+fmt(need)+'</span></div>';
     html+='<div class="row"><span>Материнский капитал</span><span>'+fmt(M)+'</span></div>';
-    if(gap<=0){
-      html+='<div class="verdict ok">Маткапитала хватает на взнос'+(gap<0?'. Остаток '+fmt(-gap)+' можно направить на погашение кредита.':' полностью.')+'</div>';
-    } else {
+    if(gap>0){
       html+='<div class="row"><span>Добрать своими</span><span>'+fmt(gap)+'</span></div>';
-      html+='<div class="verdict add">Маткапитала не хватает на полный взнос — нужно добавить '+fmt(gap)+' собственными средствами.</div>';
+      html+='<div class="verdict add">Маткапитала не хватает на взнос — нужно добавить '+fmt(gap)+' собственными средствами.</div>';
+    } else if(M>need){
+      html+='<div class="row"><span>Весь маткапитал во взнос</span><span>'+fmt(down)+'</span></div>';
+      html+='<div class="verdict ok">Маткапитала хватает на взнос. Можно внести весь капитал — кредит станет меньше.</div>';
+    } else {
+      html+='<div class="verdict ok">Маткапитала хватает на взнос полностью.</div>';
     }
     html+='<div class="row" style="margin-top:8px"><span>Сумма кредита</span><span>'+fmt(loan)+'</span></div>';
     html+='<div class="row"><span>Платёж (6%, 30 лет)</span><span>≈ '+fmt(pay(loan))+'/мес</span></div>';
@@ -220,7 +228,8 @@
     else { mkCustom.style.display='none'; }
     calc();
   });
-  [price,mkCustom,pv].forEach(function(el){ el.addEventListener('input',calc); });
+  [price,mkCustom].forEach(function(el){ el.addEventListener('input',function(){ formatField(el); calc(); }); });
+  pv.addEventListener('input', calc);
   calc();
 })();
 </script>

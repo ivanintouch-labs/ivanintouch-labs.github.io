@@ -163,3 +163,16 @@ footer.site .disc { margin-top: 12px; font-size: 13px; color: rgba(255,255,255,.
   .cards { grid-template-columns: 1fr 1fr; }
   nav.top a.menu-only { display: inline; }
 }
+
+/* --- Polish pass --- */
+:target { scroll-margin-top: 84px; }
+h1, h2, h3 { text-wrap: balance; }
+p.lead, .sub, article p { text-wrap: pretty; }
+::selection { background: var(--green-l); color: var(--green-d); }
+:focus-visible { outline: 2px solid var(--green); outline-offset: 2px; border-radius: 6px; }
+.card .more { transition: transform .14s ease; }
+.card:hover .more { transform: translateX(4px); }
+table { font-variant-numeric: tabular-nums; }
+input[type=number] { -moz-appearance: textfield; }
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
