@@ -37,12 +37,19 @@
     }
   });
 
-  // calc_used — первое взаимодействие с калькулятором (страница маткапитала)
-  var calc = document.querySelector('.calc');
-  if (calc) {
+  // calc_used — первое взаимодействие с калькулятором (страница маткапитала).
+  // Обёрнуто в DOM-ready, т.к. скрипт теперь грузится в <head> (async).
+  function attachCalc() {
+    var calc = document.querySelector('.calc');
+    if (!calc) return;
     var fired = false;
     calc.addEventListener('input', function () {
       if (!fired) { fired = true; window.ymGoal('calc_used'); }
     });
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', attachCalc);
+  } else {
+    attachCalc();
   }
 })();
