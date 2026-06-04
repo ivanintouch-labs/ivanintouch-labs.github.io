@@ -2,7 +2,7 @@
 # Мгновенно уведомляет Яндекс/IndexNow об обновлённых URL (быстрее попадание в индекс).
 # Использование: bash scripts/indexnow.sh   (шлёт все страницы из списка ниже)
 set -euo pipefail
-HOST="ivanintouch-labs.github.io"          # <-- сменить на домен, когда подключим (напр. pereezdnayug.ru)
+HOST="pereezdnayug.ru"
 KEY="62084b643325fcec096f34a779e32185"
 KEY_LOCATION="https://$HOST/$KEY.txt"
 URLS='[
