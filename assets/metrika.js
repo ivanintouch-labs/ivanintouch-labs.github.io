@@ -31,8 +31,9 @@
   document.addEventListener('click', function (e) {
     var a = e.target.closest && e.target.closest('a');
     if (!a) return;
+    var href = a.getAttribute('href') || '';
     if (a.closest('.quiz-embed') || a.classList.contains('cta') ||
-        (a.getAttribute('href') || '').indexOf('#quiz') !== -1) {
+        href.indexOf('#quiz') !== -1 || href.indexOf('marquiz') !== -1) {
       window.ymGoal('quiz_cta');
     }
   });

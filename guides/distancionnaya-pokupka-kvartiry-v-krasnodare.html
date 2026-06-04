@@ -73,6 +73,28 @@
   ]
 }
 </script>
+<!-- Marquiz script start -->
+<script>
+(function(w, d, s, o){
+  var j = d.createElement(s); j.async = true; j.src = '//script.marquiz.ru/v2.js';j.onload = function() {
+    if (document.readyState !== 'loading') Marquiz.init(o);
+    else document.addEventListener("DOMContentLoaded", function() {
+      Marquiz.init(o);
+    });
+  };
+  d.head.insertBefore(j, d.head.firstElementChild);
+})(window, document, 'script', {
+    host: '//quiz.marquiz.ru',
+    region: 'ru',
+    id: '6a21940663c2390019a34fd5',
+    autoOpen: false,
+    autoOpenFreq: 'once',
+    openOnExit: false,
+    disableOnMobile: false
+  }
+);
+</script>
+<!-- Marquiz script end -->
 </head>
 <body>
 <header class="site">
@@ -88,7 +110,7 @@
     </a>
     <nav class="top">
       <a class="menu-only" href="/#guides">Гайды</a>
-      <a class="cta" href="/#quiz">Получить подбор</a>
+      <a class="cta" href="#popup:marquiz_6a21940663c2390019a34fd5">Получить подбор</a>
     </nav>
   </div>
 </header>
@@ -129,7 +151,7 @@
   <div class="cta-block">
     <h3>Подберём 2-3 варианта под ваши критерии</h3>
     <p>Ответьте на несколько вопросов — пришлём подходящие ЖК, расчёт платежа и запишем на онлайн-показ по вашему часовому поясу.</p>
-    <div class="quiz-embed" data-marquiz="A-pereezd"><a class="btn" href="https://t.me/" rel="nofollow">Получить подбор →</a></div>
+    <div class="quiz-embed" data-marquiz="A-pereezd"><a class="btn" href="#popup:marquiz_6a21940663c2390019a34fd5">Получить подбор →</a></div>
   </div>
 
   <h2>Как смотреть квартиру удалённо</h2>
@@ -203,7 +225,7 @@
   <div class="cta-block">
     <h3>Готовы посмотреть конкретные варианты?</h3>
     <p>Подберём 2-3 ЖК под ваш бюджет и критерии, посчитаем платёж и запишем на онлайн-показ. Без обязательств.</p>
-    <div class="quiz-embed" data-marquiz="A-pereezd"><a class="btn" href="https://t.me/" rel="nofollow">Получить персональный подбор →</a></div>
+    <div class="quiz-embed" data-marquiz="A-pereezd"><a class="btn" href="#popup:marquiz_6a21940663c2390019a34fd5">Получить персональный подбор →</a></div>
   </div>
 </article>
 </main>

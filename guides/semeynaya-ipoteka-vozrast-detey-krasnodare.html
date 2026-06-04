@@ -60,6 +60,28 @@
   ]
 }
 </script>
+<!-- Marquiz script start -->
+<script>
+(function(w, d, s, o){
+  var j = d.createElement(s); j.async = true; j.src = '//script.marquiz.ru/v2.js';j.onload = function() {
+    if (document.readyState !== 'loading') Marquiz.init(o);
+    else document.addEventListener("DOMContentLoaded", function() {
+      Marquiz.init(o);
+    });
+  };
+  d.head.insertBefore(j, d.head.firstElementChild);
+})(window, document, 'script', {
+    host: '//quiz.marquiz.ru',
+    region: 'ru',
+    id: '6a21940663c2390019a34fd5',
+    autoOpen: false,
+    autoOpenFreq: 'once',
+    openOnExit: false,
+    disableOnMobile: false
+  }
+);
+</script>
+<!-- Marquiz script end -->
 </head>
 <body>
 <header class="site">
@@ -75,7 +97,7 @@
     </a>
     <nav class="top">
       <a class="menu-only" href="/#guides">Гайды</a>
-      <a class="cta" href="/#quiz">Получить подбор</a>
+      <a class="cta" href="#popup:marquiz_6a21940663c2390019a34fd5">Получить подбор</a>
     </nav>
   </div>
 </header>
@@ -120,7 +142,7 @@
   <div class="cta-block">
     <h3>Проверим, подходите ли вы — бесплатно</h3>
     <p>Назовите возраст и число детей и желаемый бюджет — скажем, подходите ли по семейной ипотеке, какой будет платёж и какие новостройки Краснодара под него есть.</p>
-    <div class="quiz-embed" data-marquiz="A-pereezd"><a class="btn" href="https://t.me/" rel="nofollow">Проверить право на 6% →</a></div>
+    <div class="quiz-embed" data-marquiz="A-pereezd"><a class="btn" href="#popup:marquiz_6a21940663c2390019a34fd5">Проверить право на 6% →</a></div>
   </div>
 
   <h2>Как успеть, если день рождения близко</h2>
@@ -178,7 +200,7 @@
   <div class="cta-block">
     <h3>Подберём новостройку под семейную ипотеку</h3>
     <p>Посчитаем платёж по вашей ставке и взносу, проверим право по возрасту детей и пришлём 2–3 подходящих ЖК в Краснодаре. Без обязательств.</p>
-    <div class="quiz-embed" data-marquiz="A-pereezd"><a class="btn" href="https://t.me/" rel="nofollow">Получить подбор и расчёт →</a></div>
+    <div class="quiz-embed" data-marquiz="A-pereezd"><a class="btn" href="#popup:marquiz_6a21940663c2390019a34fd5">Получить подбор и расчёт →</a></div>
   </div>
 </article>
 </main>

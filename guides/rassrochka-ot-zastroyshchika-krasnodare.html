@@ -56,6 +56,28 @@
   ]
 }
 </script>
+<!-- Marquiz script start -->
+<script>
+(function(w, d, s, o){
+  var j = d.createElement(s); j.async = true; j.src = '//script.marquiz.ru/v2.js';j.onload = function() {
+    if (document.readyState !== 'loading') Marquiz.init(o);
+    else document.addEventListener("DOMContentLoaded", function() {
+      Marquiz.init(o);
+    });
+  };
+  d.head.insertBefore(j, d.head.firstElementChild);
+})(window, document, 'script', {
+    host: '//quiz.marquiz.ru',
+    region: 'ru',
+    id: '6a21940663c2390019a34fd5',
+    autoOpen: false,
+    autoOpenFreq: 'once',
+    openOnExit: false,
+    disableOnMobile: false
+  }
+);
+</script>
+<!-- Marquiz script end -->
 </head>
 <body>
 <header class="site">
@@ -71,7 +93,7 @@
     </a>
     <nav class="top">
       <a class="menu-only" href="/#guides">Гайды</a>
-      <a class="cta" href="/#quiz">Получить подбор</a>
+      <a class="cta" href="#popup:marquiz_6a21940663c2390019a34fd5">Получить подбор</a>
     </nav>
   </div>
 </header>
@@ -121,7 +143,7 @@
   <div class="cta-block">
     <h3>Посчитаем рассрочку под вашу сумму — бесплатно</h3>
     <p>Назовите, сколько есть сейчас и когда появятся остальные деньги — подскажем, в каких ЖК Краснодара есть подходящая рассрочка и какой будет график.</p>
-    <div class="quiz-embed" data-marquiz="A-pereezd"><a class="btn" href="https://t.me/" rel="nofollow">Подобрать рассрочку →</a></div>
+    <div class="quiz-embed" data-marquiz="A-pereezd"><a class="btn" href="#popup:marquiz_6a21940663c2390019a34fd5">Подобрать рассрочку →</a></div>
   </div>
 
   <h2>Когда рассрочка лучше ипотеки, а когда нет</h2>
@@ -169,7 +191,7 @@
   <div class="cta-block">
     <h3>Подберём новостройку с рассрочкой под вашу ситуацию</h3>
     <p>Сравним рассрочку и ипотеку под вашу сумму и сроки, проверим, в каких ЖК Краснодара есть подходящие условия, и пришлём 2–3 варианта. Без обязательств.</p>
-    <div class="quiz-embed" data-marquiz="A-pereezd"><a class="btn" href="https://t.me/" rel="nofollow">Получить подбор и расчёт →</a></div>
+    <div class="quiz-embed" data-marquiz="A-pereezd"><a class="btn" href="#popup:marquiz_6a21940663c2390019a34fd5">Получить подбор и расчёт →</a></div>
   </div>
 
   <p>См. также: <a href="/guides/semeynaya-ipoteka-vozrast-detey-krasnodare.html">Семейная ипотека и возраст детей</a> · <a href="/guides/kupit-kvartiru-za-schet-prodazhi-svoey.html">Купить квартиру за счёт продажи своей (trade-in)</a> · <a href="/guides/materinskiy-kapital-pervonachalnyy-vznos-krasnodare.html">Маткапитал как первоначальный взнос</a>.</p>

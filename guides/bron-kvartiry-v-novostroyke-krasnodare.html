@@ -55,6 +55,28 @@
   ]
 }
 </script>
+<!-- Marquiz script start -->
+<script>
+(function(w, d, s, o){
+  var j = d.createElement(s); j.async = true; j.src = '//script.marquiz.ru/v2.js';j.onload = function() {
+    if (document.readyState !== 'loading') Marquiz.init(o);
+    else document.addEventListener("DOMContentLoaded", function() {
+      Marquiz.init(o);
+    });
+  };
+  d.head.insertBefore(j, d.head.firstElementChild);
+})(window, document, 'script', {
+    host: '//quiz.marquiz.ru',
+    region: 'ru',
+    id: '6a21940663c2390019a34fd5',
+    autoOpen: false,
+    autoOpenFreq: 'once',
+    openOnExit: false,
+    disableOnMobile: false
+  }
+);
+</script>
+<!-- Marquiz script end -->
 </head>
 <body>
 <header class="site">
@@ -70,7 +92,7 @@
     </a>
     <nav class="top">
       <a class="menu-only" href="/#guides">Гайды</a>
-      <a class="cta" href="/#quiz">Получить подбор</a>
+      <a class="cta" href="#popup:marquiz_6a21940663c2390019a34fd5">Получить подбор</a>
     </nav>
   </div>
 </header>
@@ -111,7 +133,7 @@
   <div class="cta-block">
     <h3>Поможем зафиксировать вариант</h3>
     <p>Подберём 2–3 квартиры под ваши критерии и поможем забронировать понравившуюся с фиксацией цены — дистанционно, без обязательств.</p>
-    <div class="quiz-embed" data-marquiz="A-pereezd"><a class="btn" href="https://t.me/" rel="nofollow">Подобрать и забронировать →</a></div>
+    <div class="quiz-embed" data-marquiz="A-pereezd"><a class="btn" href="#popup:marquiz_6a21940663c2390019a34fd5">Подобрать и забронировать →</a></div>
   </div>
 
   <h2>Что обязательно уточнить до брони</h2>
@@ -157,7 +179,7 @@
   <div class="cta-block">
     <h3>Зафиксируем вашу квартиру и цену</h3>
     <p>Расскажите критерии — подберём варианты и поможем оформить бронь с письменной фиксацией условий. Без давления и обязательств.</p>
-    <div class="quiz-embed" data-marquiz="A-pereezd"><a class="btn" href="https://t.me/" rel="nofollow">Получить подбор →</a></div>
+    <div class="quiz-embed" data-marquiz="A-pereezd"><a class="btn" href="#popup:marquiz_6a21940663c2390019a34fd5">Получить подбор →</a></div>
   </div>
 </article>
 </main>
